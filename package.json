@@ -1,0 +1,23 @@
+{
+  "name": "curso-fullstack-cubosacademy",
+  "version": "1.0.0",
+  "description": "Bem-vindo ao meu repositório pessoal do curso Full Stack da Cubos Academy! Este é o espaço onde documentarei minha jornada de aprendizado, compartilharei meus projetos, códigos e reflexões ao longo do curso.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JessAlvess/curso-fullstack-cubosacademy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JessAlvess/curso-fullstack-cubosacademy/issues"
+  },
+  "homepage": "https://github.com/JessAlvess/curso-fullstack-cubosacademy#readme",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
