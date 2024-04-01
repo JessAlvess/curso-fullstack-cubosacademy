@@ -17,7 +17,15 @@ app.get('/', (req, res) => {
 })
 
 app.get('/carros', (req, res) => {
-    res.send(carros)
+    const { modelo } = req.query
+    let result = carros
+
+    if (modelo) {
+        result = carros.filter((carro) => {
+            return carro.modelo === modelo
+        })
+    }
+    res.send(result)
 })
 
 app.get('/carros/:id', (req, res) => {
