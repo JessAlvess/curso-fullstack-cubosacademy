@@ -1,4 +1,4 @@
-export const carros = [
+const carros = [
     { id:1, marca: 'chevrolet', modelo: 'montana'},
     { id:2, marca: 'chevrolet', modelo: 'kadett'},
     { id:3, marca: 'chevrolet', modelo: 'celta'},
@@ -6,3 +6,5 @@ export const carros = [
     { id:5, marca: 'ford', modelo: 'focus'},
     { id:6, marca: 'ford', modelo: 'ranger'}
 ]
+
+module.exports = {carros}

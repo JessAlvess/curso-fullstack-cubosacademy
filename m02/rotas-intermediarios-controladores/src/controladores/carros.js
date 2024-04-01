@@ -1,9 +1,9 @@
-const { carro } = require('./bancodedados/carroArray')
+const { carros } = require('../bancodedados/carroArray')
 
 const encontrarCarros = (req, res) => {
     const { modelo } = req.query
     let result = carros
-
+    console.log('Cheguei no controlador de encontrar carros');
     if (modelo) {
         result = carros.filter((carro) => {
             return carro.modelo === modelo
@@ -13,6 +13,7 @@ const encontrarCarros = (req, res) => {
 }
 
 const filtrarCarros = (req, res) => {
+    console.log('Cheguei no controlador de filtrar carros');
     const carroEncontrado = carros.find((carro) => {
         return carro.id === Number(req.params.id)
     })

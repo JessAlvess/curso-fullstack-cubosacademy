@@ -1,38 +1,31 @@
 const express = require('express')
-
+const { encontrarCarros, filtrarCarros } = require('./controladores/carros')
 const app = express()
 
-const carros = [
-    { id:1, marca: 'chevrolet', modelo: 'montana'},
-    { id:2, marca: 'chevrolet', modelo: 'kadett'},
-    { id:3, marca: 'chevrolet', modelo: 'celta'},
-    { id:4, marca: 'chevrolet', modelo: 'blazer'},
-    { id:5, marca: 'ford', modelo: 'focus'},
-    { id:6, marca: 'ford', modelo: 'ranger'}
-]
+const primeiroIntermediario = (req, res, next) => {
+    console.log(('Cheguei no primeiro intermediario'));
+    next()
+}
 
+const segundoIntermediario = (req, res, next) => {
+    console.log(('Cheguei no segundo intermediario'));
+    next()
+}
+
+const intermediarioDaRota = (req, res, next) => {
+    console.log(('Cheguei no intermediario da rota'));
+    next()
+}
+
+app.use(primeiroIntermediario)
+app.use(segundoIntermediario)
 
 app.get('/', (req, res) => {
     res.send('Página inicial 1')
 })
 
-app.get('/carros', (req, res) => {
-    const { modelo } = req.query
-    let result = carros
+app.get('/carros', intermediarioDaRota, encontrarCarros)
 
-    if (modelo) {
-        result = carros.filter((carro) => {
-            return carro.modelo === modelo
-        })
-    }
-    res.send(result)
-})
-
-app.get('/carros/:id', (req, res) => {
-    const carroEncontrado = carros.find((carro) => {
-        return carro.id === Number(req.params.id)
-    })
-    res.send(carroEncontrado)
-})
+app.get('/carros/:id', filtrarCarros)
 
 app.listen(3000)
