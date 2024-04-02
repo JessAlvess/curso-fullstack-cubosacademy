@@ -15,11 +15,20 @@ const listarCarros = (req, res) => {
         result = result.filter((carro) => {
             return carro.cor === cor && carro.marca === marca
         })
-    }
+    } 
+    return res.send(result)
+}
 
+const filtrarCarros = (req, res) => {
+    let result = carros
+    const { id } = req.params
+    result = result.find((carro) => {
+        return carro.id === Number(id)
+    })
     res.send(result)
 }
 
 module.exports = {
-    listarCarros
+    listarCarros,
+    filtrarCarros
 }
