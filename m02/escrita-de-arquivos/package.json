@@ -1,0 +1,18 @@
+{
+  "name": "escrita-de-arquivos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script-json.js",
+  "scripts": {
+    "dev": "nodemon ./projeto-aula/src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
