@@ -16,7 +16,11 @@ const pool = new Pool({
 app.get("/:id", async (req, res) => {
   const { id } = req.params
   try {
-    const resultado = await pool.query(`select * from empresas where id = ${id}`)
+// sempre passe o params como values na query para evitar sql injection
+    const query = 'select * from empresas where id = $1 or id = $2'
+    const params = [id, 2]
+
+    const resultado = await pool.query(query, params)
 
     return res.json(resultado)
   } catch (error) {

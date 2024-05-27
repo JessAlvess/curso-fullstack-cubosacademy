@@ -4,7 +4,7 @@
   "description": "",
   "main": "node-postgres.js",
   "scripts": {
-    "dev": "nodemon api-aula1"
+    "dev": "nodemon api-aula-sql-injection"
   },
   "keywords": [],
   "author": "",
